@@ -1,0 +1,26 @@
+﻿@model AdvisingServices.Models.Student
+@{
+    ViewBag.Title = "StudentForm";
+}
+
+<h2>StudentForm</h2>
+
+@using (Html.BeginForm())
+{
+    <legend>New Student</legend>
+    <fieldset>
+        <label>
+            First Name
+        </label>
+        <div >
+            @Html.TextBoxFor(model => model.Fname)
+        </div>
+        <label>
+            Last Name
+        </label>
+        <div>
+            @Html.TextBoxFor(model => model.Lname)
+        </div>
+        <button type="submit">Add</button>
+    </fieldset>
+}

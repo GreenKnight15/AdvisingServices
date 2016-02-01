@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AdvisingServices.Models.Session>
+@{
+    ViewBag.Title = "Waiting List";
+}
+<div class="container">
+    <h1 class="page-header">Waiting List</h1>
+    <h4>@Html.ActionLink("New Session", "StudentChoice", "WaitList")</h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Advise Student</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+                 <tr>
+                    <td>@item.stu.Fname</td>
+                    <td>@item.StudentId </td>
+                    <td>@item.checkInTime</td>
+                    <td>@Html.ActionLink("Advise","Index","SessionForm",new { Id = item.SessionId},null)</td>
+                </tr>
+            }
+    </table>
+</div>

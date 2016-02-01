@@ -1,0 +1,22 @@
+﻿@model IEnumerable<AdvisingServices.Models.Student>
+@{
+    ViewBag.Title = "Students";
+}
+<div class="container">
+    <h1 class="page-header">Students</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Fname</td>
+                <td>@item.Lname</td>
+            </tr>
+        }
+    </table>
+</div>
